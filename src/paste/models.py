@@ -12,8 +12,8 @@ class Language(models.TextChoices):
     C      = "C"
     JS     = "Javsacript"
     Java   = "Java"
-    CSHARP = "C#"
-    MISC   = "Other"
+    CSharp = "C#"
+    Misc   = "Other"
 
 class Paste(models.Model):
     #pid = models.AutoField(primary_key=True, unique=True)
