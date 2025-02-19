@@ -26,9 +26,7 @@ class Paste(models.Model):
                                 default=Language.Misc)
     text = models.TextField()
 
-    """
+    
     def __str__(self):
-        pass # LATER!
-
-    """
+        return f"{self.__class__.__name__}(uid={self.uid}, title={self.title}, language={self.language}, text={self.text})"
     

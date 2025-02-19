@@ -22,11 +22,28 @@ button {
     margin-top: 15px;
 }
 
-#paste-form label {
+#preamble {
     display: block;
     color: white;
     top: 10px;
     position: relative;
     font-size: 35px;
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+#lng-lbl {
+    color: white;
+    font-size: 25px;
+    display: inline;
+    margin-right: 10px;
+}
+
+#language {
+    display: inline;
+    width: 150px;
+}
+
+#options {
+    float: right;
+    margin-top: 10px;
 }

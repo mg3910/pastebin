@@ -3,11 +3,22 @@
 
 {% block main %} 
 <div id="paste-form">
-    <form action="http://requestbin.whapi.cloud/1i8kbwj1" id="paste1" method="POST">
-        <label for="paste-text">Upload your code:</label>
-        <textarea id="paste-text" rows="10" cols="100"></textarea>
-        <button type="submit" form="paste1" id="sbmt-btn" class="btn btn-primary">Upload</button>
+    <form action="http://requestbin.whapi.cloud/" id="paste1" method="POST">
+        <label for="paste-text" id="preamble">Upload your code:</label>
+        <textarea id="paste-text" rows="10" cols="100" name="content"></textarea>
+        <button type="submit" id="sbmt-btn" class="btn btn-primary">Upload</button>
+        <span id="options">
+            <label for="language" id="lng-lbl">Language: </label>
+            <select id="language" class="form-select" name="language">
+                <option value="Python">Python</option>
+                <option value="JS">Javascript</option>
+                <option value="CSharp">C#</option>
+                <option value="Cpp">C++</option>
+            </select>
+        </span>
         <hr/>
     </form>
+    
 </div>
+
 {% endblock %}
