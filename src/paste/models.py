@@ -1,6 +1,7 @@
 from django.db import models
 from enum import Enum
 import random
+import uuid
 # Create your models here.
 
 def rand_title():
@@ -17,6 +18,7 @@ class Language(models.TextChoices):
 
 class Paste(models.Model):
     #pid = models.AutoField(primary_key=True, unique=True)
+    uid = models.UUIDField(primary_key=True, default=uuid.uuid4)
     title = models.CharField(max_length=128, default=rand_title)
     language = models.CharField(max_length=10, choices=Language.choices, 
                                 default=Language.MISC)
