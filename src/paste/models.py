@@ -25,6 +25,8 @@ class Paste(models.Model):
     language = models.CharField(max_length=10, choices=Language.choices, 
                                 default=Language.Misc)
     text = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
 
     
     def __str__(self):
