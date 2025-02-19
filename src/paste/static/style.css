@@ -1,0 +1,32 @@
+body {
+    background-image: url("/static/img/bg.jpg");
+    background-size: cover
+}
+
+#paste-form {
+    display: flex;
+    justify-content: center;
+}
+
+#paste-form textarea {
+    margin-top: 20px;
+    resize: none;
+    display: block;
+}
+
+hr { 
+    border-color: #fefefe;
+}
+
+button {
+    margin-top: 15px;
+}
+
+#paste-form label {
+    display: block;
+    color: white;
+    top: 10px;
+    position: relative;
+    font-size: 35px;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
