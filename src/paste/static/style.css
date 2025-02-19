@@ -1,6 +1,20 @@
 body {
     background-image: url("/static/img/bg.jpg");
-    background-size: cover
+    background-size: cover;
+    background-image: no-repeat;
+}
+
+body:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black; /* Solid black background */
+    opacity: 0.5; /* Adjust opacity to control the darkness */
+    pointer-events: none; /* Prevent it from interfering with clicks or other interactions */
+    z-index: -1;
 }
 
 #paste-form {
