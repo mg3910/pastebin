@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = [
     path("", views.index, name="index"),
-    path("paste/<int:paste_id>", views.paste, name="paste"),
-    path("upload/", views.upload, name="upload")
+    path("paste/<uuid:paste_id>", views.paste, name="paste"),
+    path("upload/", views.upload, name="upload"),
+    path("recent/", views.PasteListView.as_view(), name="recent")
 ]

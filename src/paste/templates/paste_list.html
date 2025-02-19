@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %} recent {% endblock %}
+{% block main %}
+    {%for pastes in paste_list %}
+    <h1>{{pastes.title}}</h1>
+    {% endfor %}
+{% endblock %}
