@@ -3,7 +3,7 @@
 
 {% block main %} 
 <div id="paste-form">
-    <form action="http://requestbin.whapi.cloud/" id="paste1" method="POST">
+    <form action="upload/" id="paste1" method="POST">
         <label for="paste-text" id="preamble">Upload your code:</label>
         <textarea id="paste-text" rows="10" cols="100" name="content"></textarea>
         <button type="submit" id="sbmt-btn" class="btn btn-primary">Upload</button>
@@ -14,11 +14,12 @@
                 <option value="JS">Javascript</option>
                 <option value="CSharp">C#</option>
                 <option value="Cpp">C++</option>
+                <option value="Cpp">C</option>
+                <option value="Other" selected="selected">Other</option>
             </select>
         </span>
         <hr/>
     </form>
-    
 </div>
 
 {% endblock %}

@@ -61,3 +61,24 @@ button {
     float: right;
     margin-top: 10px;
 }
+
+.submission {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
+    padding-left: 5px;
+}
+
+.submission a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.submission a:hover {
+    text-decoration: underline;
+}
+
+.submission p {
+    display: inline;
+}

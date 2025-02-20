@@ -1,11 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pastebin | ERROR! </title>
-</head>
-<body>
-    <h1>ERROR!</h1>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %} 404! {% endblock %}
+{% block main %} 
+<style>
+    #error {
+        text-align: center !important;
+        color: white;
+    }
+
+    #error a {
+        text-decoration: none;
+
+    }
+
+    #error a:hover {
+        text-decoration: underline;
+        text-decoration-color: red;
+        text-decoration-thickness: 3px;
+    }
+
+    #error h1:hover {
+        border-style: solid;
+    }
+
+    #error p {
+        font-size: 30px;
+    }
+</style>
+<main id="error">
+    <a href="/"><h1 style="text-align: center; color: red; font-size: 150px;">ERROR!</h1></a>
+    <p>File not <a href="/"><span style="color: red; text-decoration: underline;">found</span></a></p>
+</main>
+{% endblock %}
