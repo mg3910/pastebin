@@ -7,6 +7,33 @@
 
 
 {% block main %}
-<script>hljs.highlightAll();</script>
+<script>
+ // Initialize highlight.js
+document.addEventListener("DOMContentLoaded", () => {
+    // This will highlight all code blocks on the page
+    hljs.highlightAll();
+});
 
+</script>
+<div id="codeblock">
+    <pre><code 
+        {% if paste.language == "Python" %}
+        class="python"
+    {% elif paste.language == "C++" %}
+        class="cpp"
+    {% elif paste.language == "C" %}
+        class="c"
+    {% elif paste.language == "JavaScript" %}
+        class="javascript"
+    {% elif paste.language == "Java" %}
+        class="java"
+    {% elif paste.language == "C#" %}
+        class="csharp"
+    {% else %}
+        class="plaintext"
+    {% endif %}
+    >
+    {{ paste.text }}
+    </code></pre>
+</div>
 {% endblock %}

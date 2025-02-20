@@ -1,6 +1,22 @@
 {% extends "base.html" %}
 {% block title %} Home {% endblock %}
 
+{% block includes %}
+
+<!-- CodeMirror CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+
+<!-- CodeMirror theme (e.g., Dracula) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/theme/dracula.min.css">
+
+<!-- CodeMirror JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+
+<!-- CodeMirror Mode for JavaScript (or your desired mode) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/javascript/javascript.min.js"></script>
+
+{% endblock %}
+
 {% block main %} 
 <div id="paste-form">
     <form action="upload/" id="paste1" method="POST">
@@ -22,4 +38,20 @@
     </form>
 </div>
 
-{% endblock %}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    // Grab the textarea element
+    const textarea = document.getElementById("paste-text");
+    // Initialize CodeMirror on the textarea
+    const editor = CodeMirror.fromTextArea(textarea, { 
+        theme: "dracula", // Theme you selected
+        lineNumbers: true, // Display line numbers
+        autoCloseBrackets: true, // Auto-closing brackets
+        matchBrackets: true, // Highlight matching brackets
+        tabSize: 2, // Set tab size
+        indentUnit: 2, // Set indent size
+        lineWrapping: true, // Wrap long lines
+    });
+});
+</script>
+{% endblock %} 

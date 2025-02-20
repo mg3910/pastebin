@@ -4,16 +4,16 @@ body {
     background-image: no-repeat;
 }
 
-body:before {
+body::before {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: black; /* Solid black background */
-    opacity: 0.5; /* Adjust opacity to control the darkness */
-    pointer-events: none; /* Prevent it from interfering with clicks or other interactions */
+    background-color: black; 
+    opacity: 0.5; 
+    pointer-events: none; 
     z-index: -1;
 }
 
@@ -22,11 +22,14 @@ body:before {
     justify-content: center;
 }
 
-#paste-form textarea {
+.CodeMirror {
     margin-top: 20px;
     resize: none;
     display: block;
+    height: 20em !important;
+    width: 50em !important;
 }
+
 
 hr { 
     border-color: #fefefe;
@@ -70,7 +73,11 @@ button {
     padding-left: 5px;
 }
 
-.submission a{
+#submissions {
+    margin-bottom: 50px;
+}
+
+.submission a {
     text-decoration: none;
     color: inherit;
 }
@@ -81,4 +88,13 @@ button {
 
 .submission p {
     display: inline;
+}
+
+.hljs {
+    margin-top: 15px;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-style: solid;
+
+    border-color: orange;
 }

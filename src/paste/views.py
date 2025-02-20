@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from .models import *
 from django.views import generic
 from django.views.decorators.csrf import csrf_exempt
@@ -18,9 +18,12 @@ def paste(request, paste_uid):
         return render(request, "404.html")
 
 
-class PasteListView(generic.ListView):
-    model = Paste
-    template_name = "paste_list.html"
+def recent(request):
+    try:
+        ordered_paste = Paste.objects.order_by("-created_at")[:10] # get latest 10 pastes
+        return render(request, "paste_list.html", {"paste_list": ordered_paste})
+    except:
+        return render(request, "404.html")
 
 @csrf_exempt
 def upload(request):
@@ -38,11 +41,9 @@ def upload(request):
         print(Paste.objects.all())
 
     except Exception as e:
-        print(e)
         return HttpResponse("error occurred")
     
-    print("Language: ", request.POST.get("language"))
-    return HttpResponse("Done!")
+    return HttpResponseRedirect(f"../paste/{paste.uid}")
     
 
 """

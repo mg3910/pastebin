@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 {% block title %} recent {% endblock %}
 {% block main %}
-    {%for pastes in paste_list %}
-    <div class="submission border">
-        <h2><a href="../paste/{{pastes.uid}}">{{pastes.title}}</a></h2>
-        <p><span style="color: rgb(233, 233, 14);">[Created at]</span> {{pastes.created_at}}</p>
-        <p><span style="color: cyan;">[Language]</span> {{pastes.language}}</p>
+    <div id="submissions">
+        {%for pastes in paste_list %}
+        <div class="submission border">
+            <h2><a href="../paste/{{pastes.uid}}">{{pastes.title}}</a></h2>
+            <p><span style="color: rgb(233, 233, 14);">[Created at]</span> {{pastes.created_at}}</p>
+            <p><span style="color: cyan;">[Language]</span> {{pastes.language}}</p>
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 {% endblock %}
